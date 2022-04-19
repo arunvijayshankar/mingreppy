@@ -1,2 +1,2 @@
 #!/bin/bash
-python mingreppy.py somestring somefile
+python mingreppy.py somestring poem.txt

@@ -10,11 +10,24 @@ class Config:
         self.filename = args[2]    
 
 def run(config):
+    contents = list()
     try:
         with open(config.filename, 'r') as f:
             print("With text:")
             # print lines to stdout. Omit last new line character
             for line in f.readlines():
-                print(line[:len(line)-1])
+                contents.append(line)
+            for res in search(config.query, contents):
+                print(res.strip('\n'))
+
     except Exception as Err:
         print("Error opening file: `" + config.filename + "`", Err)
+
+def search(query, contents):
+    results = list()
+
+    for line in contents:
+        if query in line:
+            results.append(line)
+
+    return results

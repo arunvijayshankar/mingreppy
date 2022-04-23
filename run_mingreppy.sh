@@ -1,2 +1,2 @@
 #!/bin/bash
-python ./src/mingreppy.py somestring poem.txt
+python ./src/mingreppy.py $1 $2
